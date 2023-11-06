@@ -1,4 +1,7 @@
 const mix = require('laravel-mix');
+const glob = require('glob');
+const path = require('path');
+
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +14,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.options({
+  processCssUrls: false,
+  clearConsole: true,
+  terser: {
+    extractComments: false,
+  }
+})
+
+// Run all webpack.mix.js in app
+glob.sync(path.resolve(__dirname) + '/vendor/iboot/**/**/webpack.mix.js').forEach(item => require(item))
