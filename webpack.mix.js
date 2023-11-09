@@ -23,4 +23,5 @@ mix.options({
 })
 
 // Run all webpack.mix.js in app
-glob.sync(path.resolve(__dirname) + '/vendor/iboot/**/**/webpack.mix.js').forEach(item => require(item))
+glob.sync(path.resolve(__dirname) + '/vendor/iboot/**/webpack.mix.js').forEach(item => require(item))
+glob.sync(path.resolve(__dirname) + '/packages/**/webpack.mix.js').forEach(item => require(item))
