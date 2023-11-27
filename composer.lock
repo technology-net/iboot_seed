@@ -971,6 +971,57 @@
             "time": "2023-08-27T10:19:19+00:00"
         },
         {
+            "name": "iboot/core",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/technology-net/core.git",
+                "reference": "0fedfdb6306af55c1503939daec2aab947fcee94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/technology-net/core/zipball/0fedfdb6306af55c1503939daec2aab947fcee94",
+                "reference": "0fedfdb6306af55c1503939daec2aab947fcee94",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "IBoot\\Core\\App\\Providers\\CoreServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "/src/app/Helpers/response.php",
+                    "/src/app/Helpers/common.php"
+                ],
+                "psr-4": {
+                    "IBoot\\Core\\": "src/",
+                    "IBoot\\Core\\App\\": "src/app",
+                    "IBoot\\Core\\Database\\Seeders\\": "src/database/seeders"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "anhcv",
+                    "email": "anhcv@icitech.net"
+                }
+            ],
+            "description": "This is a core package for iboot project",
+            "support": {
+                "issues": "https://github.com/technology-net/core/issues",
+                "source": "https://github.com/technology-net/core/tree/main"
+            },
+            "time": "2023-11-18T02:28:16+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v10.30.1",
             "source": {
@@ -8126,7 +8177,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "iboot/core": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
